@@ -111,7 +111,16 @@ st.write("""
         .st-bf.st-bg.st-b3.st-d1.st-c2.st-d2.st-c7{
             background-color:  #1E2A3A;
         }
-        
+        .css-8ojfln.e1wqxbhn1{
+            background-color : #1E2A3A ;
+            color : #FFC300;
+        }
+        .css-bn3168.e1wbw4rs0.st-ae.st-af.st-ag.st-ah.st-ai.st-aj.st-bf.st-bg.st-dm.st-bt.st-dn.st-cg.st-do.st-b1.st-bs.st-as.st-dp.st-dq.st-ao.st-aq.st-dl{
+            background-color : #1E2A3A;
+        }
+        div{
+            background-color:#1E2A3A;
+        }
         td{
             color : #FFC300;
         }
