@@ -96,7 +96,7 @@ st.write("""
         .st-c8.st-bf.st-c9.st-ca.st-cb.st-bh.st-cc.st-cd.st-ce{
             color: #FFC300;
             background-color:  #1E2A3A;
-            font-weight: bold;
+            
         }
         .st-bf.st-bg.st-bz.st-c0.st-c1.st-b3.st-c2.st-c3.st-bh.st-c4.st-c5.st-c6.st-c7{
             background-color:  #1E2A3A;
@@ -130,5 +130,5 @@ st.write("""
 
 prediction = model.predict(user_input)
 st.write('<h4 style="text-align: center;color : #FFF8DC;">La voiture est estimée à :</h4>', unsafe_allow_html=True)
-st.write('<h2 style="text-align: center; color : green; font-weight: bold;" >' + str(prediction[0].round(2)) + ' 💲 '+'</h4>', unsafe_allow_html=True)
+st.write('<h1 style="text-align: center; color : green; font-weight: bold;" >' + str(prediction[0].round(2)) + ' 💲 '+'</h4>', unsafe_allow_html=True)
 
