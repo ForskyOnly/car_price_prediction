@@ -22,7 +22,7 @@ df = pd.read_csv('cleaned_data.csv')
 
 
 
-# Dictionnaire de traduction des colonnes en français
+
 colonnes_fr = {
     'CarName': 'Marque',
     'carbody': 'Type de carrosserie',
@@ -42,9 +42,9 @@ colonnes_fr = {
 }
 col1, col2, col3 = st.columns(3)
 
-def get_user_input():
-    user_input = {}
-    user_input_list = []
+def donnes_pour_prediction():
+    carac_voiture = {}
+    carac_voiture_list = []
     compteur = 0
     for colonne in colonnes_fr:
         if compteur % 3 == 0:
@@ -53,20 +53,20 @@ def get_user_input():
             col = col2
         else:
             col = col3
-        user_input[colonne] = col.selectbox(colonnes_fr[colonne], sorted(df[colonne].unique().tolist()), key='selectbox_' + str(compteur))
+        carac_voiture[colonne] = col.selectbox(colonnes_fr[colonne], sorted(df[colonne].unique().tolist()), key='selectbox_' + str(compteur))
         compteur += 1
-        user_input_list.append(user_input[colonne])
+        carac_voiture_list.append(carac_voiture[colonne])
 
-    return pd.DataFrame([user_input_list], columns=colonnes_fr.keys()) 
-
-
+    return pd.DataFrame([carac_voiture_list], columns=colonnes_fr.keys()) 
 
 
-user_input = get_user_input()
+
+
+carac_voiture = donnes_pour_prediction()
 
 with st.container():
     st.write("<h5 style='text-align: center;color : #FFF8DC;'>D'aprés les caractéristiques ci-dessous :</h5>", unsafe_allow_html=True)
-    st.write('<div style="display: flex; justify-content: center;"><style>.dataframe .dvn-scroller.glideDataEditor {max-width: 100%;}</style>' + user_input.to_html(classes=["dataframe", "dvn-scroller", "glideDataEditor"], index=False) + '</div>', unsafe_allow_html=True)
+    st.write('<div style="display: flex; justify-content: center;"><style>.dataframe .dvn-scroller.glideDataEditor {max-width: 100%;}</style>' + carac_voiture.to_html(classes=["dataframe", "dvn-scroller", "glideDataEditor"], index=False) + '</div>', unsafe_allow_html=True)
 
 
 st.write("""
@@ -128,7 +128,7 @@ st.write("""
 """, unsafe_allow_html=True)
 
 
-prediction = model.predict(user_input)
+prediction = model.predict(carac_voiture)
 st.write('<h4 style="text-align: center;color : #FFF8DC;">La voiture est estimée à :</h4>', unsafe_allow_html=True)
 st.write('<h1 style="text-align: center; color : green; font-weight: bold;" >' + str(prediction[0].round(2)) + ' 💲 '+'</h4>', unsafe_allow_html=True)
 
