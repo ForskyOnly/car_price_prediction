@@ -2,13 +2,13 @@
 
 ## Context du projet
 
-Ce projet a été réalisé lors du programme de formation "Développeur Data IA" à l'ecole Microsoft by Simplon. On nous a fourni un fichier CSV contenant des données sur les voitures, et notre objectif était de créer un modèle d'apprentissage automatique capable d'estimer le prix d'une voiture en se basant sur ces données.
+Ce projet a été réalisé lors de la formation "Développeur Data IA" à l'ecole Microsoft by Simplon. On nous a fourni un fichier CSV contenant des données sur les voitures, et notre objectif était de créer un modèle d'apprentissage automatique capable d'estimer le prix d'une voiture en se basant sur ces données.
 
 ## Description du projet 
 
 **"Votre client, un revendeur de voiture, souhaite la création d'une application pouvant estimer le prix d'une voiture."**
 
-Le projet consistait à analyser et à nettoyer les données, à construire un modèle d'apprentissage automatique à l'aide dun 'algorithme  de regression lineaire, et à déployer le modèle sur une application Streamlit.
+Le projet consistait à analyser et à nettoyer les données, à construire un modèle d'apprentissage automatique à l'aide d'un algorithme  de regression lineaire, et à déployer le modèle sur une application Streamlit.
 
 ## Fichiers présent dans le depot: 
 
@@ -36,7 +36,7 @@ Le projet consistait à analyser et à nettoyer les données, à construire un m
 2. Installez les dépendances avec `pip install`.
 
 
-## bibliothèque utilisées
+## Bibliothèque utilisées
 
 - Scikit-learn (sklearn)
 - Pandas
