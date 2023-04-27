@@ -20,14 +20,14 @@ Rendre l'application accesible via une api(FastAPI)
 
 #### Fichiers Jupyter Notebooks :
 
-1. data_cleaning.ipynb : Ce fichier contient le code utilisé pour nettoyer les données.
-2. data_analyse.ipynb : Ce fichier contient les données d'analyse et les graphiques pour comprendre les données.
-3. modelisation.ipynb : Ce fichier contient le model d'apprentissage automaique.
+- data_cleaning.ipynb : Ce fichier contient le code utilisé pour nettoyer les données.
+- data_analyse.ipynb : Ce fichier contient les données d'analyse et les graphiques pour comprendre les données.
+- modelisation.ipynb : Ce fichier contient le model d'apprentissage automaique.
 
 #### Fichiers CSV :
 
-1. cars.csv : la fichier de base contenant les informations nécessaire
-2. cleaned_data.csv : le fichier cars.csv nettoyer
+-  cars.csv : la fichier de base contenant les informations nécessaire
+-  cleaned_data.csv : le fichier cars.csv nettoyer
 
 #### Autres fichiers :
 
