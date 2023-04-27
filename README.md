@@ -69,7 +69,7 @@ Rendre l'application accesible via une api(FastAPI)
 3. `modelisation.ipynb` 
 - Exécutez `streamlit run streamlit.py` pour lancer l'interface Web Streamlit
 - Exécutez `creation_bdd.py` pour crée la base de donnée
-- Exécutez `main.py` pour lancer l'API ou `uvicorn main:app --reload` dans un terminal
+- Exécutez `main.py`  ou `uvicorn main:app --reload` dans un terminal pour lancer l'API
 - Entrez http://127.0.0.1:8000/docs#/ dans votre navigateur pour acceder à l'interface de l'API
 
 **Vous pouvez désormer estimé le prix d'une voiture , ajouter, supprimer ou modifier les voiture dans votre base de données**
