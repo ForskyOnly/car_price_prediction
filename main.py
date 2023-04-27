@@ -31,13 +31,27 @@ with open('model_predict_car.pkl', 'rb') as f:
 
 
 @app.post('/predict')
-async def predict(car: Car):
+async def predict(car: Car)-> dict:
+    """
+        Endpoint pour prédire le prix d'une voiture en fonction de ses caractéristiques.
+        Args:
+            - car: objet de type Car contenant les caractéristiques de la voiture à prédire.
+        Returns:
+            - Dictionnaire contenant la prédiction de prix pour la voiture fournie.
+    """
     X = pd.DataFrame(car.dict(), index=[0])
     return {'price': model.predict(X)[0]}
 
 
 @app.post('/cars')
-async def create_car(car: Car):
+async def create_car(car: Car)->dict:
+    """
+        Endpoint pour ajouter une nouvelle voiture à la base de données SQLite.
+        Args:
+            - car: objet de type Car contenant les caractéristiques de la voiture à ajouter.
+        Returns:
+            - Dictionnaire contenant le statut de l'opération.
+    """
     conn = sqlite3.connect('cars.db')
     c = conn.cursor()
     c.execute("INSERT INTO cars (CarName, carbody, drivewheel, wheelbase, carlength, carwidth, curbweight, enginetype, cylindernumber, enginesize, fuelsystem, boreratio, horsepower, citympg, highwaympg, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (car.CarName, car.carbody, car.drivewheel, car.wheelbase, car.carlength, car.carwidth, car.curbweight, car.enginetype, car.cylindernumber, car.enginesize, car.fuelsystem, car.boreratio, car.horsepower, car.citympg, car.highwaympg, car.price))
@@ -47,7 +61,15 @@ async def create_car(car: Car):
 
 
 @app.put('/cars/{car_id}')
-async def update_car(car_id: int, car: Car):
+async def update_car(car_id: int, car: Car)-> dict:
+    """
+        Endpoint pour mettre à jour une voiture existante dans la base de données SQLite.
+        Args:
+            - car_id: identifiant de la voiture à mettre à jour.
+            - car: objet de type Car contenant les nouvelles caractéristiques de la voiture.
+        Returns:
+            - Dictionnaire contenant le statut de l'opération.
+    """
     conn = sqlite3.connect('cars.db')
     c = conn.cursor()
     c.execute("UPDATE cars SET CarName=?, carbody=?, drivewheel=?, wheelbase=?, carlength=?, carwidth=?, curbweight=?, enginetype=?, cylindernumber=?, enginesize=?, fuelsystem=?, boreratio=?, horsepower=?, citympg=?, highwaympg=?, price=? WHERE id=?", (car.CarName, car.carbody, car.drivewheel, car.wheelbase, car.carlength, car.carwidth, car.curbweight, car.enginetype, car.cylindernumber, car.enginesize, car.fuelsystem, car.boreratio, car.horsepower, car.citympg, car.highwaympg, car.price, car_id))
@@ -57,7 +79,14 @@ async def update_car(car_id: int, car: Car):
 
 
 @app.delete('/cars/{car_id}')
-async def delete_car(car_id: int):
+async def delete_car(car_id: int)-> dict:
+    """
+        Endpoint pour supprimer une voiture existante de la base de données SQLite.
+        Args:
+            - car_id: identifiant de la voiture à supprimer.
+        Returns:
+            - Dictionnaire contenant le statut de l'opération.
+    """
     conn = sqlite3.connect('cars.db')
     c = conn.cursor()
     c.execute("DELETE FROM cars WHERE id=?", (car_id,))

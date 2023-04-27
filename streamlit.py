@@ -42,7 +42,13 @@ colonnes_fr = {
 }
 col1, col2, col3 = st.columns(3)
 
-def donnes_pour_prediction():
+def donnes_pour_prediction() -> pd.DataFrame :
+    """
+    Cette fonction permet de créer une interface utilisateur pour saisir les caractéristiques d'une voiture pour laquelle
+    on veut prédire le prix. Elle retourne un DataFrame Pandas contenant les caractéristiques saisies par l'utilisateur ainsi que le prix prédis.
+    Returns:
+        pd.DataFrame: Un DataFrame Pandas contenant les caractéristiques d'une voiture entré par l'utilisateur et le prix de la prédiction en format'float'
+    """
     carac_voiture = {}
     carac_voiture_list = []
     compteur = 0
