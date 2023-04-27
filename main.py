@@ -75,7 +75,7 @@ async def update_car(car_id: int, car: Car)-> dict:
     c.execute("UPDATE cars SET CarName=?, carbody=?, drivewheel=?, wheelbase=?, carlength=?, carwidth=?, curbweight=?, enginetype=?, cylindernumber=?, enginesize=?, fuelsystem=?, boreratio=?, horsepower=?, citympg=?, highwaympg=?, price=? WHERE id=?", (car.CarName, car.carbody, car.drivewheel, car.wheelbase, car.carlength, car.carwidth, car.curbweight, car.enginetype, car.cylindernumber, car.enginesize, car.fuelsystem, car.boreratio, car.horsepower, car.citympg, car.highwaympg, car.price, car_id))
     conn.commit()
     c.close()
-    return {"status": "Voiture mise à jour avec succès"}
+    return {"status": "Voiture modifié avec succès"}
 
 
 @app.delete('/cars/{car_id}')

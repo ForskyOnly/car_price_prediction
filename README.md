@@ -27,7 +27,7 @@ Rendre l'application accesible via une api(FastAPI)
 #### Fichiers CSV :
 
 -  cars.csv : la fichier de base contenant les informations nécessaire
--  cleaned_data.csv : le fichier cars.csv nettoyer
+-  cleaned_data.csv : le fichier cars.csv nettoyé
 
 #### Autres fichiers :
 
