@@ -30,11 +30,6 @@ with open('model_predict_car.pkl', 'rb') as f:
     model = pickle.load(f)
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
 @app.post('/predict')
 async def predict(car: Car):
     X = pd.DataFrame(car.dict(), index=[0])
@@ -69,5 +64,8 @@ async def delete_car(car_id: int):
     conn.commit()
     c.close()
     return {"status": "Voiture supprimée avec succès"}
+
+
+
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8000)

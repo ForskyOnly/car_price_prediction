@@ -4,6 +4,10 @@
 
 Ce projet a été réalisé lors de la formation "Développeur Data IA" à l'ecole Microsoft by Simplon. On nous a fourni un fichier CSV contenant des données sur les voitures, et notre objectif était de créer un modèle d'apprentissage automatique capable d'estimer le prix d'une voiture en se basant sur ces données.
 
+##### BONUS :
+
+Rendre l'application accesible via une api(FastAPI)
+
 ## Description du projet 
 
 **"Votre client, un revendeur de voiture, souhaite la création d'une application pouvant estimer le prix d'une voiture."**
@@ -25,8 +29,12 @@ Le projet consistait à analyser et à nettoyer les données, à construire un m
 
 #### Autres fichiers :
 
-1. streamlit.py contenant le modéle dépolyé sur une app streamlit pret  à être utilisé
-2. model_predict_car.pkl le modele d'apprentissage automatique términé
+- streamlit.py contenant le modéle dépolyé sur une app streamlit pret  à être utilisé
+- model_predict_car.pkl le modele d'apprentissage automatique términé
+- creation_bdd.py : script python pour crée et implanter les données dans une bdd sqlite
+- cars.bdd : la base de donnée qui sera crée(étape précèdante) regroupant les données 
+- main.py : le script pour la création de l'API
+
 
 
 
@@ -45,13 +53,23 @@ Le projet consistait à analyser et à nettoyer les données, à construire un m
 - Seaborn
 - Streamlit
 - Pickle
+- FastAPI
+- Uvicorn
+- Pydantic
+- Sqlite3
+
 
 ## Utilisation
 
-- Exécutez tout les notebooks `.ipynb` pour récupérer les informations.
-- Exécutez `streamlit run streamlit.py` pour lancer l'interface Web Streamlit.
+- Exécutez tout les notebooks `.ipynb` pour récupérer les informations
+- Exécutez `streamlit run streamlit.py` pour lancer l'interface Web Streamlit
+- Exécutez `creation_bdd.py` pour crée la base de donnée
+- Exécutez `main.py` pour lancer l'API ou `uvicorn main:app --reload` dans un terminal
+- Entrez http://127.0.0.1:8000/docs#/ dans votre navigateur pour acceder à l'interface de l'API
 
-## Contributeurs
+**Vous pouvez désormer estimé le prix d'une voiture , ajouter, supprimer ou modifier les voiture dans votre base de données**
 
-Ce projet a été réalisé par [Rubic](https://github.com/ForskyOnly)
 
+## License
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
