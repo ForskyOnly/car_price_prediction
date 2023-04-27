@@ -4,15 +4,17 @@
 
 Ce projet a été réalisé lors de la formation "Développeur Data IA" à l'ecole Microsoft by Simplon. On nous a fourni un fichier CSV contenant des données sur les voitures, et notre objectif était de créer un modèle d'apprentissage automatique capable d'estimer le prix d'une voiture en se basant sur ces données.
 
-##### BONUS :
 
-Rendre l'application accesible via une api(FastAPI)
 
 ## Description du projet 
 
 **"Votre client, un revendeur de voiture, souhaite la création d'une application pouvant estimer le prix d'une voiture."**
 
 Le projet consistait à analyser et à nettoyer les données, à construire un modèle d'apprentissage automatique à l'aide d'un algorithme  de regression lineaire, et à déployer le modèle sur une application Streamlit.
+
+##### BONUS :
+
+Rendre l'application accesible via une api(FastAPI)
 
 ## Fichiers présent dans le depot: 
 
