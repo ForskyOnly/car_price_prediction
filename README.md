@@ -63,7 +63,10 @@ Rendre l'application accesible via une api(FastAPI)
 
 ## Utilisation
 
-- Exécutez tout les notebooks `.ipynb` pour récupérer les informations
+- Pour récupérer les informations exécutez les notebooks `.ipynb`  dans l'ordre qui suit :
+1. `data_cleaning.ipynb` 
+2. `data_analsye.ipynb` 
+3. `modelisation.ipynb` 
 - Exécutez `streamlit run streamlit.py` pour lancer l'interface Web Streamlit
 - Exécutez `creation_bdd.py` pour crée la base de donnée
 - Exécutez `main.py` pour lancer l'API ou `uvicorn main:app --reload` dans un terminal
