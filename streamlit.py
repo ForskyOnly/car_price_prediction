@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.ensemble import RandomForestRegressor
+import sklearn
 
 
 st.set_page_config(page_title="Car Price Estimator", page_icon="🚘", layout="wide")
