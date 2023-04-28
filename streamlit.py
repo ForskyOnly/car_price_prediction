@@ -19,7 +19,7 @@ st.markdown(html_temp, unsafe_allow_html=True)
 with open('./model_predict_car.pkl', 'rb') as file:
     model = pickle.load(file)
     
-df = pd.read_csv('cleaned_data.csv')
+df = pd.read_csv('./cleaned_data.csv')
 
 
 
