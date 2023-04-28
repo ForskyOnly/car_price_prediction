@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import sklearn
-
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.datasets import make_classification
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler,OneHotEncoder
+from sklearn.compose import ColumnTransformer
 
 st.set_page_config(page_title="Car Price Estimator", page_icon="🚘", layout="wide")
 
